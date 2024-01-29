@@ -1,4 +1,4 @@
 function checkAge(age){
-  return (age > 18 ? true : confirm('pearents agree?'));
+  return ((age > 18) || confirm('pearents agree?'));
 }
 alert(checkAge(prompt('What age?')));
