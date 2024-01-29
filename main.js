@@ -1,4 +1,4 @@
-function checkAge(age){
-  return ((age > 18) || confirm('pearents agree?'));
+function min(a, b){
+  return ((a < b) ? a : b);
 }
-alert(checkAge(prompt('What age?')));
+alert(min(+prompt('enter a?'), +prompt('enter b?')));
