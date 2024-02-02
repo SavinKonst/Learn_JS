@@ -1,5 +1,12 @@
 describe("pow", function () {
 
+  it("для отрицательных n возвращает NaN", function() {
+    assert.isNaN(pow(2, -1));
+  });
+  it("для дробных n возвращает NaN", function () {
+    assert.isNaN(pow(2, 1.5));
+  });
+
   describe("возводит х в степень 3", function () {
 
     function makeTest(x) {
@@ -14,5 +21,5 @@ describe("pow", function () {
     }
 
   });
-  
+
 });
