@@ -1,2 +1,0 @@
-
-alert(`${prompt('Your name?')}`);
