@@ -1,18 +1,12 @@
-let schedule = {};
+const user = {
+  name: "John",
+};
 
-alert("The schedule is empty? " + isEmpty(schedule));
-alert("Edding property schedule[8:30] = Wake up");
+alert(typeof user);
 
-schedule["8:30"] = "Wake up";
+// это будет работать?
+user.name = "Pete";
 
-alert("The schedule is empty? " + isEmpty(schedule));
+alert(user.name);
 
-
-// Returns "true" if an Object have any properties
-function isEmpty(obj) {
-  for (let key in obj) {
-    return false;
-  }
-
-  return true;
-}
+user = 123;
