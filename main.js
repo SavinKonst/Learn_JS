@@ -1,12 +1,16 @@
-const user = {
-  name: "John",
+let salaries = {
+    John: 100,
+    Ann: "160",
+    Pete: 130,
 };
 
-alert(typeof user);
+alert(sumSalaries(salaries));
 
-// это будет работать?
-user.name = "Pete";
+function sumSalaries(obj) {
+  let result = 0;
 
-alert(user.name);
-
-user = 123;
+  for (key in obj) {
+    result += +obj[key];
+  }
+  return result;
+}
