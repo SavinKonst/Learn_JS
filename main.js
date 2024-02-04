@@ -12,15 +12,17 @@ showObject(menu);
 
 function multiplyNumeric(obj) {
   for (let key in obj) {
-    if (typeof obj[key] == Number) obj[key] *= 2;
+    if (typeof obj[key] == "number") {
+      obj[key] *= 2;
+    }
   }
 }
 
 function showObject(obj) {
   let message = "";
 
-  for (let key in menu) {
-    message += ("${key}" + " : " + "${menu[key]}\n");
+  for (let key in obj) {
+    message += `${key}` + " : " + `${menu[key]}\n`;
   }
 
   alert(message);
