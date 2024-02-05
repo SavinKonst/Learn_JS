@@ -1,24 +1,21 @@
-// Объекты основы. Копирование объектов и ссылки.
-let menu = {
-  sizes: {
-    width: 200,
-    height: 300,
+// Объекты основы.
+// 4. Методы объекта, this
+// Task2. Calculator
+"use strict";
+
+let calculator = {
+  read() {
+    this.a = +prompt("Enter a:", "");
+    this.b = +prompt("Enter b:", "");
   },
-  title: "My menu",
+  sum() {
+    return this.a + this.b;
+  },
+  mul() {
+    return this.a * this.b;
+  },
 };
 
-let clone = Object.assign({}, menu);
-console.log('oject name"clone"');
-showObject(clone);
-let secondClone = _.cloneDeep(menu);
-console.log('oject name"secondClone"');
-showObject(secondClone);
-
-
-function showObject(obj) {
-  let message = "";
-  for (key in obj) {
-message += key + " : " + obj[key] + "\n";
-  }
-  console.log(message);
-}
+calculator.read();
+alert(calculator.sum());
+alert(calculator.mul());
