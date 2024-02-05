@@ -1,21 +1,22 @@
 // Объекты основы.
 // 4. Методы объекта, this
-// Task2. Calculator
+// Task3. Call chain.
 "use strict";
 
-let calculator = {
-  read() {
-    this.a = +prompt("Enter a:", "");
-    this.b = +prompt("Enter b:", "");
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this; // added "return this" to each method
   },
-  sum() {
-    return this.a + this.b;
+  down() {
+    this.step--;
+    return this; // LISA
   },
-  mul() {
-    return this.a * this.b;
+  showStep() {
+    alert(this.step);
+    return this;
   },
 };
 
-calculator.read();
-alert(calculator.sum());
-alert(calculator.mul());
+ladder.up().up().down().showStep().down().showStep();
