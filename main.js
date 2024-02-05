@@ -1,29 +1,24 @@
+// Объекты основы. Копирование объектов и ссылки.
 let menu = {
-  width: 200,
-  height: 300,
+  sizes: {
+    width: 200,
+    height: 300,
+  },
   title: "My menu",
 };
 
-showObject(menu);
+let clone = Object.assign({}, menu);
+console.log('oject name"clone"');
+showObject(clone);
+let secondClone = _.cloneDeep(menu);
+console.log('oject name"secondClone"');
+showObject(secondClone);
 
-multiplyNumeric(menu);
-
-showObject(menu);
-
-function multiplyNumeric(obj) {
-  for (let key in obj) {
-    if (typeof obj[key] == "number") {
-      obj[key] *= 2;
-    }
-  }
-}
 
 function showObject(obj) {
   let message = "";
-
-  for (let key in obj) {
-    message += `${key}` + " : " + `${menu[key]}\n`;
+  for (key in obj) {
+message += key + " : " + obj[key] + "\n";
   }
-
-  alert(message);
+  console.log(message);
 }
