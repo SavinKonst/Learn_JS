@@ -1,28 +1,27 @@
 // Объекты основы.
-// 4. Методы объекта, this
-// Task3. Call chain.
-"use strict";
+// 5. Констпруктор, оператор new
+// Task2. Создайте калькулятор при помощи конструктора, new Calculator.
 
-let ladder = {
-  step: 0,
-  up() {
-    this.step++;
-    return this; // added "return this" to each method
-  },
-  down() {
-    this.step--;
-    return this; // LISA
-  },
-  showStep() {
-    alert(this.step);
-    return this;
-  },
+//"use strict";
+
+function Calculator() {
+
+  this.read = function() {
+    this.a = +prompt( "Enter a:", 0 );
+    this.b = +prompt( "Enter b:", 0 );
+  };
+
+  this.sum = function() {
+    return this.a + this.b;
+  };
+
+  this.mul = function() {
+    return this.a * this.b;
+  };
 };
 
-ladder
-  .up()
-  .up()
-  .down()
-  .showStep()
-  .down()
-  .showStep();
+let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum = " + calculator.sum() );
+alert( "Mul = " + calculator.mul() );
