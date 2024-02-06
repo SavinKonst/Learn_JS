@@ -1,6 +1,6 @@
 <!-- Типы данных
 2. Числа
-Задача 1. Сумма пользовательских чисел. -->
+Задача 2. Почему 6.35.toFixed(1) == 6.3? -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +12,10 @@
 <body>
     <script>
         
-        let a = +prompt( "Enter a:", 0 );
-        let b = +prompt( "Enter b:", 0 );
+        let a = 6.35;
 
-        alert( `Sum = ${ a + b }` );
+        alert(Math.round(a * 10) / 10);
+
     </script>
 </body>
 </html>
