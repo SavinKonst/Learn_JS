@@ -1,27 +1,21 @@
 // Объекты основы.
 // 5. Констпруктор, оператор new
-// Task2. Создайте калькулятор при помощи конструктора, new Calculator.
+// Task3. Создайте new Accumulator
 
 //"use strict";
 
-function Calculator() {
-
-  this.read = function() {
-    this.a = +prompt( "Enter a:", 0 );
-    this.b = +prompt( "Enter b:", 0 );
-  };
-
-  this.sum = function() {
-    return this.a + this.b;
-  };
-
-  this.mul = function() {
-    return this.a * this.b;
+function Accumulator(startingValue) {
+  this.value = startingValue;
+  this.read = function () {
+    this.value += +prompt("Enter new value:", 0);
   };
 };
 
-let calculator = new Calculator();
-calculator.read();
+let accumulator = new Accumulator(5);
 
-alert( "Sum = " + calculator.sum() );
-alert( "Mul = " + calculator.mul() );
+alert(accumulator.value);
+
+accumulator.read();
+accumulator.read();
+
+alert(accumulator.value);
