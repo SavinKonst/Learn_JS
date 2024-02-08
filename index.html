@@ -1,37 +1,24 @@
 <!-- Типы данных
 2. Числа
-Задача 3. Воод числового значения -->
+Задача 4. Бесконечный цикл по ошибке -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn JS. Data types. Task3</title>
+    <title>Learn JS. Data types. Task4</title>
     </head>
 <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script>
 
     <script>
-        function readNumber() {
-            let a;
+        let a = 0;
 
-            while(1) {
-            a = prompt("Enter a number:", 0);
-
-            if( a === "" || a === null ) {
-                return null;
-            }
-            if ( isFinite(a) ) {
-                alert(a);
-                return +a;
-            }
-
-            }
+        while( a != 10 ) {
+            a += 0.2;
+            alert(a);
         }
-
-        // readNumber();
+        // Цикл никогда не завершится из-за потери точности вычислений в JavaScript
     </script>
 </body>
 </html>;
