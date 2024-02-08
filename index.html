@@ -1,21 +1,37 @@
 <!-- Типы данных
 2. Числа
-Задача 2. Почему 6.35.toFixed(1) == 6.3? -->
+Задача 3. Воод числового значения -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn JS. Data types</title>
+    <title>Learn JS. Data types. Task3</title>
     </head>
 <body>
+    <script src="https://ru.js.cx/test/libs.js"></script>
+    <script src="test.js"></script>
+
     <script>
-        
-        let a = 6.35;
+        function readNumber() {
+            let a;
 
-        alert(Math.round(a * 10) / 10);
+            while(1) {
+            a = prompt("Enter a number:", 0);
 
+            if( a === "" || a === null ) {
+                return null;
+            }
+            if ( isFinite(a) ) {
+                alert(a);
+                return +a;
+            }
+
+            }
+        }
+
+        // readNumber();
     </script>
 </body>
-</html>
+</html>;
