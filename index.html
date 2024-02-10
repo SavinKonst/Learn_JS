@@ -1,24 +1,31 @@
 <!-- Типы данных
-2. Числа
-Задача 6. Случайное число от min до max -->
+3. Строки
+Задача 1. Сделать первый символ заглавным -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn JS. Data types. Task6</title>
-    </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data types. Strings. Task1</title>
+</head>
+
 <body>
-
-    <script>
-        function randomInteger(min, max) {
-            return Math.floor(min + Math.random() * (max -min + 1));
-        }
-
-        alert( randomInteger(1, 5));
-        alert( randomInteger(1, 5));
-        alert( randomInteger(1, 5));
-</script>
+  <script>
+  
+    function ucFirst(name) {
+      if (!name) return "";
+      return (name[0].toUpperCase() + name.slice(1));
+    }
+    
+    alert(ucFirst("max"));
+    
+  </script>
+  
+  <script src="https://ru.js.cx/test/libs.js"></script>
+  
+  <script src="test.js"></script>
+  
 </body>
-</html>;
+</html>
