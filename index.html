@@ -1,6 +1,6 @@
 <!-- Типы данных
 3. Строки
-Задача 2. Проверка на спам -->
+Задача 3. Усечение строки -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,59 +8,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data types. Strings. Task2</title>
+  <title>Data types. Strings. Task3</title>
 </head>
 
 <body>
   <script>
-// This is my variant
-    // function checkSpam(str) {
 
-    //     let trgt = "xxx";
-    //     if ( findTarget(str, trgt) ) return true;
+alert( truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
 
-    //     trgt = "viagra";
-    //     if ( findTarget(str, trgt) ) return true;
-
-    //     return false;
-    // }
-    
-    // function findTarget(string, target) {
-    //     let pos = 0;
-    //     let find = "";
-
-    //     for( let s of string) {
-    //         let position = 0;
-    //         for(let t of target) {
-    //             if(string[pos + position] == t.toLowerCase()) {
-    //                 find += t.toLowerCase();
-    //                 position++;
-    //             } else 
-    //             if(string[pos + position] == t.toUpperCase()) {
-    //                 find += t.toUpperCase();
-    //                 position++;
-    //             } else {
-    //                 find = "";
-    //                 break;
-    //             }
-    //         }
-    //         if(find) {
-    //             // alert(find);
-    //             return true;
-    //         }
-    //         pos++;
-    //     }
-    //     return false;
-    // }
-    
-// This is the right option
-
-function checkSpam(str) {
-  let lowerStr = str.toLowerCase();
-
-  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+function truncate(str, maxlenght) {
+  if(str.length > maxlenght) {
+    return (str.slice(0, (maxlenght - 1)) + '…');
+  } else {
+  return str;
+  }
 }
 
+/*
+function truncate(str, maxlength) {
+  return (str.length > maxlength) ?
+    str.slice(0, maxlength - 1) + '…' : str;
+}*/
   </script>
   
   <script src="https://ru.js.cx/test/libs.js"></script>
