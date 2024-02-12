@@ -1,9 +1,13 @@
-describe("ucFirst", function() {
-  it('Переводит первый символ в верхний регистр', function() {
-    assert.strictEqual(ucFirst("john"), "John");
+describe("checkSpam", function() {
+  it('считает спамом "buy ViAgRA now"', function() {
+    assert.isTrue(checkSpam('buy ViAgRA now'));
   });
 
-  it("Не умирает на пустых строках", function() {
-    assert.strictEqual(ucFirst(""), "");
+  it('считает спамом "free xxxxx"', function() {
+    assert.isTrue(checkSpam('free xxxxx'));
+  });
+
+  it('не считает спамом "innocent rabbit"', function() {
+    assert.isFalse(checkSpam('innocent rabbit'));
   });
 });

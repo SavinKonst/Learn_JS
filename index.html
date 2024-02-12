@@ -1,6 +1,6 @@
 <!-- Типы данных
 3. Строки
-Задача 1. Сделать первый символ заглавным -->
+Задача 2. Проверка на спам -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,19 +8,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data types. Strings. Task1</title>
+  <title>Data types. Strings. Task2</title>
 </head>
 
 <body>
   <script>
-  
-    function ucFirst(name) {
-      if (!name) return "";
-      return (name[0].toUpperCase() + name.slice(1));
-    }
+// This is my variant
+    // function checkSpam(str) {
+
+    //     let trgt = "xxx";
+    //     if ( findTarget(str, trgt) ) return true;
+
+    //     trgt = "viagra";
+    //     if ( findTarget(str, trgt) ) return true;
+
+    //     return false;
+    // }
     
-    alert(ucFirst("max"));
+    // function findTarget(string, target) {
+    //     let pos = 0;
+    //     let find = "";
+
+    //     for( let s of string) {
+    //         let position = 0;
+    //         for(let t of target) {
+    //             if(string[pos + position] == t.toLowerCase()) {
+    //                 find += t.toLowerCase();
+    //                 position++;
+    //             } else 
+    //             if(string[pos + position] == t.toUpperCase()) {
+    //                 find += t.toUpperCase();
+    //                 position++;
+    //             } else {
+    //                 find = "";
+    //                 break;
+    //             }
+    //         }
+    //         if(find) {
+    //             // alert(find);
+    //             return true;
+    //         }
+    //         pos++;
+    //     }
+    //     return false;
+    // }
     
+// This is the right option
+
+function checkSpam(str) {
+  let lowerStr = str.toLowerCase();
+
+  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+}
+
   </script>
   
   <script src="https://ru.js.cx/test/libs.js"></script>
