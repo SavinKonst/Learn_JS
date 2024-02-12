@@ -1,6 +1,6 @@
 <!-- Типы данных
 3. Строки
-Задача 3. Усечение строки -->
+Задача 4. Выделить число -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,32 +8,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data types. Strings. Task3</title>
+  <title>Data types. Strings. Task4</title>
 </head>
 
 <body>
   <script>
-
-alert( truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
-
-function truncate(str, maxlenght) {
-  if(str.length > maxlenght) {
-    return (str.slice(0, (maxlenght - 1)) + '…');
-  } else {
-  return str;
-  }
-}
-
-/*
-function truncate(str, maxlength) {
-  return (str.length > maxlength) ?
-    str.slice(0, maxlength - 1) + '…' : str;
-}*/
+  
+    function extractCurrencyValue(str) {
+      return parseInt(str.slice(1));
+    }
+    
   </script>
-  
+
   <script src="https://ru.js.cx/test/libs.js"></script>
-  
+
   <script src="test.js"></script>
-  
+
 </body>
+
 </html>
