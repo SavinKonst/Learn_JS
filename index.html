@@ -1,6 +1,6 @@
 <!-- Типы данных
-3. Строки
-Задача 4. Выделить число -->
+4. Массивы
+Задача 2. Операции с массивами -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,22 +8,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data types. Strings. Task4</title>
+  <title>Data types. Arrays. Task2</title>
 </head>
 
 <body>
   <script>
   
-    function extractCurrencyValue(str) {
-      return parseInt(str.slice(1));
-    }
-    
+let styles = ["джаз", "блюз"];
+console.log(styles);
+styles.push("рок-н-рол");
+console.log(styles);
+let middle = Math.trunc(styles.length/2);
+styles[middle] = "Классика";
+console.log(styles);
+console.log(styles.shift());
+console.log(styles);
+styles.unshift("Рэп", "Регги");
+console.log(styles);
+
   </script>
-
-  <script src="https://ru.js.cx/test/libs.js"></script>
-
-  <script src="test.js"></script>
-
 </body>
 
 </html>
