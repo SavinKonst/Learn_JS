@@ -1,32 +1,41 @@
 <!-- Типы данных
 4. Массивы
-Задача 2. Операции с массивами -->
+Задача 4. Сумма введённых чисел -->
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data types. Arrays. Task4</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data types. Arrays. Task2</title>
-</head>
+  <body>
+    <script>
+      sumInput();
 
-<body>
-  <script>
-  
-let styles = ["джаз", "блюз"];
-console.log(styles);
-styles.push("рок-н-рол");
-console.log(styles);
-let middle = Math.trunc(styles.length/2);
-styles[middle] = "Классика";
-console.log(styles);
-console.log(styles.shift());
-console.log(styles);
-styles.unshift("Рэп", "Регги");
-console.log(styles);
+      function sumInput() {
 
-  </script>
-</body>
+        let input;
+        let array = [];
 
+        while (1) {
+          input = prompt("Enter a number:");
+          if (input == "" || !+input) {
+            break;
+          } else {
+            array.push(+input);
+          }
+        }
+
+        let sum = 0;
+
+        for (let el of array) {
+          sum += el;
+        }
+        
+        return sum;
+      }
+    </script>
+  </body>
 </html>
