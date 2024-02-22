@@ -1,6 +1,6 @@
 <!-- Типы данных
-4. Массивы
-Задача 5. Подмассив наибольшей суммы -->
+5.5 Методы массивов
+Задача 1. Переведите текст вида border-left-width в borderLeftWidth -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,59 +15,15 @@
     <script src="test.js"></script>
 
     <script>
-      // getMaxSubSum([-1, 2, 3, -9]); // == 5 (сумма выделенных элементов)
-      // getMaxSubSum([2, -1, 2, 3, -9]); // == 6
-      // getMaxSubSum([-1, 2, 3, -9, 11]); // == 11
-      // getMaxSubSum([-2, -1, 1, 2]); // == 3;
-      // getMaxSubSum([100, -9, 2, -3, 5]); // == 100
-      // getMaxSubSum([1, 2, 3]); // == 6 (берём все)
+      function camelize(str) {
+        let arr = str.split('');
 
-      function getMaxSubSum(arr) {
-        while (arr[0] < 0) {
-          arr.shift();
-        }
-        while (arr[arr.length - 1] < 0) {
-          arr.pop();
-        }
-        let maxSumForward = 0;
-        for (let item = 0; item < arr.length; item++) {
-          let sum = 0;
-          for (let i = item; i < arr.length; i++) {
-            sum += arr[i];
-          }
-          if (sum > maxSumForward) {
-            maxSumForward = sum;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] == "-") {
+            arr.splice(i, 2, arr[i + 1].toUpperCase());
           }
         }
-
-        let maxSumBack = 0;
-        for (let item = arr.length - 1; item >= 0; item--) {
-          let sum = 0;
-          for (let i = 0; i <= item; i++) {
-            sum += arr[i];
-          }
-          if (sum > maxSumBack) {
-            maxSumBack = sum;
-          }
-        }
-        let result = 0;
-        maxSumForward > maxSumBack
-          ? (result = maxSumForward)
-          : (result = maxSumBack);
-
-        let maxSum = 0;
-        while (arr.length) {
-          arr.shift();
-          arr.pop();
-          sum = 0;
-          for (let element of arr) {
-            sum += element;
-          }
-          sum > maxSum ? (maxSum = sum) : maxSum;
-        }
-        maxSum > result ? (result = maxSum) : result;
-        // alert(result);
-        return result;
+        return arr.join("");
       }
     </script>
   </body>
