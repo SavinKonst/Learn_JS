@@ -1,13 +1,13 @@
 <!-- Типы данных
 5.5 Методы массивов
-Задача 1. Переведите текст вида border-left-width в borderLeftWidth -->
+Задача 2. Фильтрация по диапазону -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Arrays. Task5</title>
+    <title>Data types. Array Methods. Task2</title>
   </head>
 
   <body>
@@ -15,15 +15,8 @@
     <script src="test.js"></script>
 
     <script>
-      function camelize(str) {
-        let arr = str.split('');
-
-        for (let i = 0; i < arr.length; i++) {
-          if (arr[i] == "-") {
-            arr.splice(i, 2, arr[i + 1].toUpperCase());
-          }
-        }
-        return arr.join("");
+      function filterRange(arr, a, b) {
+        return arr.filter((item) => item >= a && item <= b);
       }
     </script>
   </body>
