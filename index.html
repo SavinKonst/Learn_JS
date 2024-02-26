@@ -1,28 +1,27 @@
 <!-- Типы данных
 5.5 Методы массивов
-Задача 4. Сортировать в порядке по убыванию -->
+Задача 5. Скопировать и отсортировать массив -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Array Methods. Task4</title>
+    <title>Data types. Array Methods. Task5</title>
   </head>
 
   <body>
     <script>
-      let arr = [5, 2, 1, -10, 8];
+      let arr = ["HTML", "JavaScript", "CSS"];
 
-      alert(arr); // 8, 5, 2, 1, -10
+      let sorted = copySorted(arr);
 
-      arr.sort((a, b) => b - a);
-      // arr.sort(compareNumeric);
+      alert(sorted); // CSS, HTML, JavaScript
+      alert(arr); // HTML, JavaScript, CSS (без изменений)
 
-      alert(arr); // 8, 5, 2, 1, -10
-
-      function compareNumeric(a, b) {
-        return b - a;
+      function copySorted(arr) {
+        let array = arr.slice();
+        return array.sort();
       }
     </script>
   </body>
