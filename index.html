@@ -1,35 +1,28 @@
 <!-- Типы данных
 5.5 Методы массивов
-Задача 3. Фильтрация по диапазону "на месте"
-Correct Answer -->
+Задача 4. Сортировать в порядке по убыванию -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Array Methods. Task3</title>
+    <title>Data types. Array Methods. Task4</title>
   </head>
 
   <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script>
-
     <script>
-      // let arr = [10, 7, 5, 0, 3, 8, 1];
-      // alert(arr);
-      // //    alert(types(arr[0]));
+      let arr = [5, 2, 1, -10, 8];
 
-      // filterRangeInPlace(arr, 2, 5);
-      // alert(arr);
+      alert(arr); // 8, 5, 2, 1, -10
 
-      function filterRangeInPlace(arr, a, b) {
-        for (let index = 0; index < arr.length; index++) {
-          if (arr[index] < a || arr[index] > b) {
-            arr.splice(index, 1);
-            index--;
-          }
-        }
+      arr.sort((a, b) => b - a);
+      // arr.sort(compareNumeric);
+
+      alert(arr); // 8, 5, 2, 1, -10
+
+      function compareNumeric(a, b) {
+        return b - a;
       }
     </script>
   </body>
