@@ -1,17 +1,16 @@
-describe("filterRange", function () {
-  it("returns the filtered values", function () {
+describe("filterRangeInPlace", function() {
+
+  it("returns the filtered values", function() {
+
     let arr = [5, 3, 8, 1];
 
-    let filtered = filterRange(arr, 1, 4);
+    filterRangeInPlace(arr, 2, 5);
 
-    assert.deepEqual(filtered, [3, 1]);
+    assert.deepEqual(arr, [5, 3]);
   });
 
-  it("doesn't change the array", function () {
-    let arr = [5, 3, 8, 1];
-
-    let filtered = filterRange(arr, 1, 4);
-
-    assert.deepEqual(arr, [5, 3, 8, 1]);
+  it("doesn't return anything", function() {
+    assert.isUndefined(filterRangeInPlace([1, 2, 3], 1, 4));
   });
+
 });

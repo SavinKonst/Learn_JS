@@ -1,23 +1,36 @@
 <!-- Типы данных
 5.5 Методы массивов
-Задача 2. Фильтрация по диапазону -->
+Задача 3. Фильтрация по диапазону "на месте" 
+Incorrect answer-->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Array Methods. Task2</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data types. Array Methods. Task2</title>
+</head>
+
+<body>
     <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script>
+  <script src="test.js"></script>
 
-    <script>
-      function filterRange(arr, a, b) {
-        return arr.filter((item) => item >= a && item <= b);
-      }
-    </script>
-  </body>
+  <script>
+/*    let arr = [5, 3, 8, 1];
+    alert(arr);
+    //    alert(types(arr[0]));
+
+    filterRangeInPlace(arr, 2, 5);
+    alert(arr);
+*/
+
+    function filterRangeInPlace(array, a, b) {
+      let result = array;
+      result = array.filter((item) => item >= a && item <= b);
+      arr = result;
+    }
+  </script>
+</body>
+
 </html>
