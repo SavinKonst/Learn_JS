@@ -11,12 +11,28 @@
   </head>
 
   <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
-<script src="test.js"></script>
+    <!-- <script src="https://ru.js.cx/test/libs.js"></script>
+    <script src="test.js"></script> -->
     <script>
+      let a = 5,
+        b = 3;
 
+      let calc = new Calculator();
+      alert(calc.calculate("5 + 3"));
 
+      // function trim(str) {
+      //   return str.split(" ");
+      // }
 
-</script>
+      function Calculator() {
+        this.calculate = function (str) {
+          let arr = str.split(" ");
+
+          this.a = +arr[0];
+          this.b = +arr[2];
+          return this.a + this.b;
+        };
+      }
+    </script>
   </body>
 </html>
