@@ -1,37 +1,26 @@
 <!-- Типы данных
 5.5 Методы массивов
-Задача 6. Создать расширяемый калькулятор -->
+Задача 7. Трансформировать в массив имён -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Array Methods. Task5</title>
+    <title>Data types. Array Methods. Task7</title>
   </head>
 
   <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script>
     <script>
-      function Calculator() {
-        this["+"] = (a, b) => a + b;
-        this["-"] = (a, b) => a - b;
+      let vasya = { name: "Вася", age: 25 };
+      let petya = { name: "Петя", age: 30 };
+      let masha = { name: "Маша", age: 28 };
 
-        this.addMethod = (name, func) => {
-          this[name] = func;
-        };
+      let users = [vasya, petya, masha];
 
-        this.calculate = function (str) {
-          let arr = str.split(" ");
+      let names = users.map((item) => item.name);
 
-          a = +arr[0];
-          operator = arr[1];
-          b = +arr[2];
-
-          return this[operator](a, b);
-        };
-      }
+      alert(names); // Вася, Петя, Маша
     </script>
   </body>
 </html>
