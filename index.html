@@ -11,26 +11,25 @@
   </head>
 
   <body>
-    <!-- <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script> -->
+    <script src="https://ru.js.cx/test/libs.js"></script>
+    <script src="test.js"></script>
     <script>
-      let a = 5,
-        b = 3;
-
-      let calc = new Calculator();
-      alert(calc.calculate("5 + 3"));
-
-      // function trim(str) {
-      //   return str.split(" ");
-      // }
-
       function Calculator() {
+        this["+"] = (a, b) => a + b;
+        this["-"] = (a, b) => a - b;
+
+        this.addMethod = (name, func) => {
+          this[name] = func;
+        };
+
         this.calculate = function (str) {
           let arr = str.split(" ");
 
-          this.a = +arr[0];
-          this.b = +arr[2];
-          return this.a + this.b;
+          a = +arr[0];
+          operator = arr[1];
+          b = +arr[2];
+
+          return this[operator](a, b);
         };
       }
     </script>
