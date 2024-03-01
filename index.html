@@ -18,18 +18,19 @@
 
       let users = [vasya, petya, masha];
 
-      let usersMapped = users.map((item, index) => {
-        usersMapped[index] = { fullName: item.name + item.surname };
-      });
+      let usersMapped = users.map((item) => ({
+        fullName: item.name + " " + item.surname,
+        id: item.id,
+      }));
       /*
-usersMapped = [
-  { fullName: "Вася Пупкин", id: 1 },
-  { fullName: "Петя Иванов", id: 2 },
-  { fullName: "Маша Петрова", id: 3 }
-]
-*/
+      usersMapped = [
+        { fullName: "Вася Пупкин", id: 1 },
+        { fullName: "Петя Иванов", id: 2 },
+        { fullName: "Маша Петрова", id: 3 }
+      ]
+      */
 
-      // alert(usersMapped[0].id); // 1
+      alert(usersMapped[0].id); // 1
       alert(usersMapped[0].fullName); // Вася Пупкин
     </script>
   </body>
