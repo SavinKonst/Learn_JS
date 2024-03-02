@@ -19,6 +19,10 @@
       let arr = [vasya, petya, masha];
 
       alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
+      
+      function getAverageAge(arr){
+        return arr.reduce((sum, item) => sum + +item.age, 0) / arr.length;
+      }
     </script>
   </body>
 </html>
