@@ -1,41 +1,44 @@
 <!-- Типы данных
 5.5 Методы массивов
-Задача 12. Оставить уникальные элементы массива -->
+Задача 13. Создайте объект с ключами из массива -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Array Methods. Task12</title>
+    <title>Data types. Array Methods. Task13</title>
   </head>
 
   <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script>
+    <!-- <script src="https://ru.js.cx/test/libs.js"></script>
+    <script src="test.js"></script> -->
     <script>
-      function unique(arr) {
-        let result = [];
-        arr.forEach((element) => {
-          result.includes(element) ? 1 : result.push(element);
-          /* ваш код */
-        });
+      let users = [
+        { id: "john", name: "John Smith", age: 20 },
+        { id: "ann", name: "Ann Smith", age: 24 },
+        { id: "pete", name: "Pete Peterson", age: 31 },
+      ];
+
+      let usersById = groupById(users);
+
+      console.log(usersById);
+
+      function groupById(users) {
+        let result = {};
+        result = users.reduce((element) => (result[users.id] = element));
         return result;
       }
 
-      // let strings = [
-      //   "кришна",
-      //   "кришна",
-      //   "харе",
-      //   "харе",
-      //   "харе",
-      //   "харе",
-      //   "кришна",
-      //   "кришна",
-      //   ":-O",
-      // ];
+      /*
+// после вызова у нас должно получиться:
 
-      // alert(unique(strings)); // кришна, харе, :-O
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
     </script>
   </body>
 </html>
