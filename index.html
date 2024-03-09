@@ -4,42 +4,43 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data types. Map&Set. Task2</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data types. Map&Set. Task2</title>
-</head>
-
-<body>
-<!--     <script src="https://ru.js.cx/test/libs.js"></script>
+  <body>
+    <script src="https://ru.js.cx/test/libs.js"></script>
     <script src="test.js"></script>
-    -->
-  <script>
-    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-        alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
-        
-    aclean(arr);
+    <script>
+      // let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-    function aclean(arra) {
-      let array = arra.slice(0);
-      for (let i = 0; i < array.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
+      //     alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
 
-          if (array[i].length == array[j].length && checkSum(array[i]) == checkSum(array[j])) {
-            
-            console.log(array.splice(j, 1));
+      // // aclean(arr);
+
+      function aclean(arra) {
+        let array = arra.slice(0);
+        for (let i = 0; i < array.length; i++) {
+          for (let j = i + 1; j < array.length; j++) {
+            if (
+              array[i].length == array[j].length &&
+              checkSum(array[i]) == checkSum(array[j])
+            ) {
+              array.splice(j, 1);
+            }
           }
         }
+        return array;
       }
-      return array;
-    }
-    function checkSum(word){
-      let sum = 0;
-      return Array.from(word).forEach((item) => {sum += +item});
-    }
-  </script>
-</body>
-
+      function checkSum(word) {
+        let sum = 0;
+        return Array.from(word).forEach((item) => {
+          sum += +item;
+        });
+      }
+    </script>
+  </body>
 </html>
