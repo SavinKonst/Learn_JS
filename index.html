@@ -15,31 +15,27 @@
     <script src="test.js"></script>
 
     <script>
-      // let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+      // let arr = [
+      //   "nap",
+      //   "teachers",
+      //   "cheaters",
+      //   "PAN",
+      //   "ear",
+      //   "era",
+      //   "hectares",
+      // ];
 
-      //     alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
+      // alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
 
       // // aclean(arr);
 
-      function aclean(arra) {
-        let array = arra.slice(0);
-        for (let i = 0; i < array.length; i++) {
-          for (let j = i + 1; j < array.length; j++) {
-            if (
-              array[i].length == array[j].length &&
-              checkSum(array[i]) == checkSum(array[j])
-            ) {
-              array.splice(j, 1);
-            }
-          }
+      function aclean(array) {
+        let map = new Map();
+        for (let item of array) {
+          let key = item.toLowerCase().split("").sort().join("");
+          map.set(key, item);
         }
-        return array;
-      }
-      function checkSum(word) {
-        let sum = 0;
-        return Array.from(word).forEach((item) => {
-          sum += +item;
-        });
+        return Array.from(map.values());
       }
     </script>
   </body>
