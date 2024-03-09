@@ -1,39 +1,45 @@
 <!-- Типы данных
 5.7 Map и Set
-Задача 1. Фильтрация уникальных элементов массива -->
+Задача 2. Отфильтруйте анаграммы -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Array Methods. Task1</title>
-  </head>
 
-  <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data types. Map&Set. Task2</title>
+</head>
+
+<body>
+<!--     <script src="https://ru.js.cx/test/libs.js"></script>
     <script src="test.js"></script>
-    <script>
-      function unique(arr) {
-        /* ваш код */
-        let set = new Set();
-        arr.forEach((element) => set.add(element));
-        return Array.from(set);
+    -->
+  <script>
+    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+        alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
+        
+    aclean(arr);
+
+    function aclean(arra) {
+      let array = arra.slice(0);
+      for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+
+          if (array[i].length == array[j].length && checkSum(array[i]) == checkSum(array[j])) {
+            
+            console.log(array.splice(j, 1));
+          }
+        }
       }
+      return array;
+    }
+    function checkSum(word){
+      let sum = 0;
+      return Array.from(word).forEach((item) => {sum += +item});
+    }
+  </script>
+</body>
 
-      // let values = [
-      //   "Hare",
-      //   "Krishna",
-      //   "Hare",
-      //   "Krishna",
-      //   "Krishna",
-      //   "Krishna",
-      //   "Hare",
-      //   "Hare",
-      //   ":-O",
-      // ];
-
-      // alert(unique(values)); // Hare,Krishna,:-O
-    </script>
-  </body>
 </html>
