@@ -1,42 +1,29 @@
 <!-- Типы данных
 5.7 Map и Set
-Задача 2. Отфильтруйте анаграммы -->
+Задача 3. Перебираемые ключи -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types. Map&Set. Task2</title>
-  </head>
 
-  <body>
-    <script src="https://ru.js.cx/test/libs.js"></script>
-    <script src="test.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data types. Map&Set. Task3</title>
+</head>
 
-    <script>
-      // let arr = [
-      //   "nap",
-      //   "teachers",
-      //   "cheaters",
-      //   "PAN",
-      //   "ear",
-      //   "era",
-      //   "hectares",
-      // ];
+<body>
+  <script>
+    let map = new Map();
 
-      // alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
+    map.set("name", "John");
 
-      // // aclean(arr);
+    let keys = Array.from(map.keys());
 
-      function aclean(array) {
-        let map = new Map();
-        for (let item of array) {
-          let key = item.toLowerCase().split("").sort().join("");
-          map.set(key, item);
-        }
-        return Array.from(map.values());
-      }
-    </script>
-  </body>
+    // Error: keys.push is not a function
+    // Ошибка: keys.push -- это не функция
+    keys.push("more");
+    console.log(keys);
+  </script>
+</body>
+
 </html>
