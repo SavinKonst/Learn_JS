@@ -1,29 +1,19 @@
 <!-- Типы данных
-5.7 Map и Set
-Задача 3. Перебираемые ключи -->
+5.9 Object.keys, values, entries
+Задача 1. Сумма свойств объекта -->
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data types. Object.keys, values, entries. Task1</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data types. Map&Set. Task3</title>
-</head>
+  <body>
+    <script src="https://ru.js.cx/test/libs.js"></script>
+    <script src="test.js"></script>
 
-<body>
-  <script>
-    let map = new Map();
-
-    map.set("name", "John");
-
-    let keys = Array.from(map.keys());
-
-    // Error: keys.push is not a function
-    // Ошибка: keys.push -- это не функция
-    keys.push("more");
-    console.log(keys);
-  </script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
