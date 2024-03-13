@@ -1,10 +1,7 @@
-let user = {
-  name: "John",
-  age: 30,
-};
+let user = { name: "John", years: 30 };
 
-alert(count(user)); // 2
+let { name, years: age, isAdmin = false } = user;
 
-function count(user) {
-  return Object.keys(user).length;
-}
+alert(name); // John
+alert(age); // 30
+alert(isAdmin); // false
