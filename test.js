@@ -1,29 +1,24 @@
-describe('getLocalDay возвращает "европейский" день недели', function () {
-  it("3 января 2014 года - пятница", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 3)), 5);
+describe("getDateAgo", function () {
+  it("1 день до 02.01.2015 -> день 1", function () {
+    assert.equal(getDateAgo(new Date(2015, 0, 2), 1), 1);
   });
 
-  it("4 января 2014 года - суббота", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 4)), 6);
+  it("2 дня до 02.01.2015 -> день 31", function () {
+    assert.equal(getDateAgo(new Date(2015, 0, 2), 2), 31);
   });
 
-  it("5 января 2014 года - воскресенье", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 5)), 7);
+  it("100 дней до 02.01.2015 -> день 24", function () {
+    assert.equal(getDateAgo(new Date(2015, 0, 2), 100), 24);
   });
 
-  it("6 января 2014 года - понедельник", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 6)), 1);
+  it("365 дней до 02.01.2015 -> день 2", function () {
+    assert.equal(getDateAgo(new Date(2015, 0, 2), 365), 2);
   });
 
-  it("7 января 2014 года - вторник", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 7)), 2);
-  });
-
-  it("8 января 2014 года - среда", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 8)), 3);
-  });
-
-  it("9 января 2014 года - четверг", function () {
-    assert.equal(getLocalDay(new Date(2014, 0, 9)), 4);
+  it("переданный объект date не модифицируется", function () {
+    let date = new Date(2015, 0, 2);
+    let dateCopy = new Date(date);
+    getDateAgo(dateCopy, 100);
+    assert.equal(date.getTime(), dateCopy.getTime());
   });
 });
