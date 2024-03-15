@@ -1,9 +1,7 @@
-alert(getSecondsToday()); // == 36000 (3600 * 10)
+alert(getSecondsToTomorrow());
 
-function getSecondsToday() {
-  let date = new Date(),
-    hh = date.getHours(),
-    mm = date.getMinutes(),
-    ss = date.getSeconds();
-  return ss + mm * 60 + hh * 3600;
+function getSecondsToTomorrow() {
+  let now = new Date(),
+    tommorow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+  return Math.round((tommorow - now) / 1000);
 }
