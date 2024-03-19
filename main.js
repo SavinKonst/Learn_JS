@@ -1,9 +1,27 @@
-let user = {
-  name: "Василий Иванович",
-  age: 35,
+let room = {
+  number: 23,
 };
 
-let string = JSON.stringify(user);
-let obj = JSON.parse(string);
+let meetup = {
+  title: "Совещание",
+  occupiedBy: [{ name: "Иванов" }, { name: "Петров" }],
+  place: room,
+};
 
-console.log(obj);
+// цикличные ссылки
+room.occupiedBy = meetup;
+meetup.self = meetup;
+
+alert(
+  JSON.stringify(meetup, function replacer(key, value) {
+    return key != "" && value == meetup ? undefined : value;
+  })
+);
+
+/* в результате должно быть:
+{
+  "title":"Совещание",
+  "occupiedBy":[{"name":"Иванов"},{"name":"Петров"}],
+  "place":{"number":23}
+}
+*/
