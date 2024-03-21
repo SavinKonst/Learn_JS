@@ -1,15 +1,17 @@
-alert(factorial(1)); // 1
-alert(factorial(2)); // 2
-alert(factorial(3)); // 6
-alert(factorial(4)); // 24
-alert(factorial(5)); // 120
+function fib(n) {
+  let a = 0,
+    b = 1,
+    c = 1;
 
-function factorial(n) {
-  return n != 1 ? n * factorial(n - 1) : 1;
+  for (let i = 3; i <= n; i++) {
+    a = b;
+    b = c;
+    c = b + a;
+  }
+  return c;
 }
 
-// you can do this, but the recursion will add one step
-
-// function factorial(n) {
-//   return n ? n * factorial(n - 1) : 1;
-// }
+alert(fib(1)); // 2
+alert(fib(3)); // 2
+alert(fib(7)); // 13
+alert(fib(77)); // 5527939700884757
