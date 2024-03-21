@@ -1,17 +1,30 @@
-function fib(n) {
-  let a = 0,
-    b = 1,
-    c = 1;
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null,
+      },
+    },
+  },
+};
 
-  for (let i = 3; i <= n; i++) {
-    a = b;
-    b = c;
-    c = b + a;
+ciclePrintList(list);
+recursivePrintList(list);
+
+function ciclePrintList(list) {
+  let copy = list;
+
+  while (copy) {
+    alert(copy.value);
+    copy = copy.next;
   }
-  return c;
 }
 
-alert(fib(1)); // 2
-alert(fib(3)); // 2
-alert(fib(7)); // 13
-alert(fib(77)); // 5527939700884757
+function recursivePrintList(list) {
+  alert(list.value);
+  if (list.next != null) recursivePrintList(list.next);
+}
