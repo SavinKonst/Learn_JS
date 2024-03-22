@@ -12,7 +12,7 @@ let list = {
   },
 };
 
-// ciclePrintList(list);
+ciclePrintList(list);
 recursivePrintList(list);
 
 function ciclePrintList(list) {
@@ -37,9 +37,8 @@ function ciclePrintList(list) {
 
 function recursivePrintList(list) {
 
-  if (list.next != null) recursivePrintList(list.next);
-  else {
-    alert(list.value);
-    
+  if(list.next) {
+    recursivePrintList(list.next);
   }
+  alert(list.value);
 }
