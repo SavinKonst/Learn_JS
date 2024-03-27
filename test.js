@@ -1,37 +1,22 @@
-describe("byField", function () {
-  let users = [
-    { name: "John", age: 20, surname: "Johnson" },
-    { name: "Pete", age: 18, surname: "Peterson" },
-    { name: "Ann", age: 19, surname: "Hathaway" },
-  ];
+describe("army", function () {
+  let army;
 
-  it("sorts users by name", function () {
-    let nameSortedKey = [
-      { name: "Ann", age: 19, surname: "Hathaway" },
-      { name: "John", age: 20, surname: "Johnson" },
-      { name: "Pete", age: 18, surname: "Peterson" },
-    ];
-    let nameSortedAnswer = users.sort(byField("name"));
-    assert.deepEqual(nameSortedKey, nameSortedAnswer);
+  before(function () {
+    army = makeArmy();
+    window.alert = sinon.stub(window, "alert");
   });
 
-  it("sorts users by age", function () {
-    let ageSortedKey = [
-      { name: "Pete", age: 18, surname: "Peterson" },
-      { name: "Ann", age: 19, surname: "Hathaway" },
-      { name: "John", age: 20, surname: "Johnson" },
-    ];
-    let ageSortedAnswer = users.sort(byField("age"));
-    assert.deepEqual(ageSortedKey, ageSortedAnswer);
+  it("army[0] shows 0", function () {
+    army[0]();
+    assert(alert.calledWith(0));
   });
 
-  it("sorts users by surname", function () {
-    let surnameSortedKey = [
-      { name: "Ann", age: 19, surname: "Hathaway" },
-      { name: "John", age: 20, surname: "Johnson" },
-      { name: "Pete", age: 18, surname: "Peterson" },
-    ];
-    let surnameSortedAnswer = users.sort(byField("surname"));
-    assert.deepEqual(surnameSortedAnswer, surnameSortedKey);
+  it("army[5] shows 5", function () {
+    army[5]();
+    assert(alert.calledWith(5));
+  });
+
+  after(function () {
+    window.alert.restore();
   });
 });
