@@ -1,22 +1,34 @@
-describe("army", function () {
-  let army;
+describe("counter", function () {
+  it("increases from call to call", function () {
+    let counter = makeCounter();
 
-  before(function () {
-    army = makeArmy();
-    window.alert = sinon.stub(window, "alert");
+    assert.equal(counter(), 0);
+    assert.equal(counter(), 1);
+    assert.equal(counter(), 2);
   });
 
-  it("army[0] shows 0", function () {
-    army[0]();
-    assert(alert.calledWith(0));
+  describe("counter.set", function () {
+    it("sets the count", function () {
+      let counter = makeCounter();
+
+      counter.set(10);
+
+      assert.equal(counter(), 10);
+      assert.equal(counter(), 11);
+    });
   });
 
-  it("army[5] shows 5", function () {
-    army[5]();
-    assert(alert.calledWith(5));
-  });
+  describe("counter.decrease", function () {
+    it("decreases the count", function () {
+      let counter = makeCounter();
 
-  after(function () {
-    window.alert.restore();
+      counter.set(10);
+
+      assert.equal(counter(), 10);
+
+      counter.decrease();
+
+      assert.equal(counter(), 10);
+    });
   });
 });
