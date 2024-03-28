@@ -1,14 +1,18 @@
 function makeCounter() {
   let count = 0;
+  function counter() {
+    return count++;
+  }
   counter.set = function (num) {
-    return (count = num);
+    count = num;
+  };
+  counter.decrease = function () {
+    count--;
   };
 
-  return function () {
-    return count++;
-  };
-  // ... ваш код ...
+  return counter;
 }
+// ... ваш код ...
 
 let counter = makeCounter();
 
@@ -18,7 +22,6 @@ alert(counter()); // 1
 counter.set(10); // установить новое значение счётчика
 
 alert(counter()); // 10
-debugger;
 
 counter.decrease(); // уменьшить значение счётчика на 1
 
