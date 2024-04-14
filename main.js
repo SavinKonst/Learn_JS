@@ -1,24 +1,24 @@
-let head = {
-  glasses: 1,
+let hamster = {
+  eat(food) {
+    this.stomach.push(food);
+  },
 };
 
-let table = {
-  pen: 3,
+let speedy = {
+  stomach: [],
+
+  __proto__: hamster,
 };
 
-let bed = {
-  sheet: 1,
-  pillow: 2,
+let lazy = {
+  stomach: [],
+
+  __proto__: hamster,
 };
 
-let pockets = {
-  money: 2000,
-};
+// Этот хомяк нашёл еду
+speedy.eat("apple");
+alert(speedy.stomach); // apple
 
-table.__proto__ = head;
-bed.__proto__ = table;
-pockets.__proto__ = bed;
-
-alert(pockets.pen);
-alert(bed.glasses);
-alert(table.money);
+// У этого хомяка тоже есть еда. Почему? Исправьте
+alert(lazy.stomach); // apple
