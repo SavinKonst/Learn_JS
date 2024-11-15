@@ -1,14 +1,25 @@
-async function showAvatar() {
-  let githubResponse = await fetch(`https://api.github.com/users/SavinKonst`);
-  let githubUser = await githubResponse.json();
-      let img = document.createElement('img');
-      img.src = githubUser.avatar_url;
-      img.className = "promise-avatar-example";
-      document.body.append(img);
-  
-      await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-      img.remove();
-      return githubUser;
+/*
+function loadJson(url) {
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
 }
-  showAvatar();
-  alert('code end');
+*/
+
+loadJson('no-such-user.json') // (3)
+  .catch(alert); // Error: 404
+  
+  
+async function loadJson(url) {
+  let response = await fetch(url);
+  if(response.status == 200) {
+    let json = await response.json();
+    return json
+  }
+  throw new Error(response.status);
+}
