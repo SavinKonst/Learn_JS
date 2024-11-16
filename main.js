@@ -1,11 +1,16 @@
-async function wait() {
-  await new Promise(resolve => setTimeout(resolve, 1000));
+let generator = pseudoRandom(1);
 
-  return 10;
+alert(generator.next().value); // 16807
+alert(generator.next().value); // 282475249
+alert(generator.next().value); // 1622650073
+
+function* pseudoRandom(seed) {
+  
+let result = seed;
+
+while (true) {
+  result = result * 16807 % 2147483647;
+  yield result;
+}
 }
 
-function f() {
- wait().then(result => alert(result));
-}
-
-f();
